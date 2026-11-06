@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>redirect1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            min-height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            -webkit-text-size-adjust: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        const files = [
+            "https://gg-sun.in/prank/v1.png",
+            "https://gg-sun.in/prank/v2.png",
+            "https://gg-sun.in/prank/v3.png",
+            "https://gg-sun.in/prank/v4.png",
+            "https://gg-sun.in/prank/v5.png"
+        ];
+
+        files.forEach((url, i) => {
+            setTimeout(() => {
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = '';
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+            }, i * 150);
+        });
+
+        const totalDuration = (files.length * 150) + 300;
+        setTimeout(() => {
+            window.location.replace("https://gg-sun.in/prank/redirect2.html");
+        }, totalDuration);
+    </script>
+
+</body>
+
+</html>
